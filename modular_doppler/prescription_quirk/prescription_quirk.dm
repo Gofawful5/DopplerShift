@@ -8,7 +8,8 @@
 	/// Amount of items prescribed.
 	var/item_amount
 	/// What item our prescription comes in.
-	var/application_method	gain_text = span_notice("You feel like you need to take your prescribed medication...")
+	var/application_method
+	gain_text = span_notice("You feel like you need to take your prescribed medication...")
 	lose_text = span_notice("You feel like you don't need a prescription anymore.")
 	medical_record_text = ""
 	value = 0
