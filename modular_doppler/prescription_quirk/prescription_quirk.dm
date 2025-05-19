@@ -1,11 +1,14 @@
 /datum/quirk/item_quirk/prescription
 	name = "Registered Prescription"
 	desc = "You have a medication registered with the pharmacy. Your medical records will be updated to reflect this, and medical staff will do their best to provide you with a supply for the shift."
-	var/reagent_name // name of reagent
-	var/reagent_amount // amount of reagent per item
-	var/item_amount // amount of items
-	var/application_method // method of application
-	gain_text = span_notice("You feel lie you need to take your prescribed medication...")
+	/// Name of prescribed reagent.
+	var/reagent_name
+	/// Amount of prescribed reagent per item.
+	var/reagent_amount
+	/// Amount of items prescribed.
+	var/item_amount
+	/// What item our prescription comes in.
+	var/application_method	gain_text = span_notice("You feel like you need to take your prescribed medication...")
 	lose_text = span_notice("You feel like you don't need a prescription anymore.")
 	medical_record_text = ""
 	value = 0
@@ -23,9 +26,7 @@
 	item_amount = client_source?.prefs.read_preference(/datum/preference/numeric/item_amount)
 	application_method = client_source?.prefs.read_preference(/datum/preference/choiced/application_method)
 	medical_record_text = "[human_holder.name] has been prescribed [item_amount] [LOWER_TEXT(application_method)] of [reagent_name], with a dose of [reagent_amount] units per. Please produce this prescription and call them to medical when it is ready."
-
-	var/obj/item/storage/pill_bottle/pillbottle = new(get_turf(human_holder), reagent_name)
-	give_item_to_holder(pillbottle, list(LOCATION_BACKPACK, LOCATION_HANDS), flavour_text = "You are prescribed [item_amount] [LOWER_TEXT(application_method)] of [reagent_name], with a dose of [reagent_amount] units per.")
+	give_item_to_holder(/obj/item/storage/pill_bottle, list(LOCATION_BACKPACK, LOCATION_HANDS), flavour_text = "You are prescribed [item_amount] [LOWER_TEXT(application_method)] of [reagent_name], with a dose of [reagent_amount] units per.")
 
 /datum/quirk/item_quirk/prescription/remove()
 
