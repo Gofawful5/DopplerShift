@@ -7,7 +7,7 @@
 	var/method_application
 	gain_text = span_notice("You feel like you need to take your prescribed medication...")
 	lose_text = span_notice("You feel like you don't need a prescription anymore.")
-	medical_record_text = "Patient has been prescribed a specified dose of medicine. Please produce this prescription and call them to medical when it is ready."
+	medical_record_text = ""
 	value = 0
 	icon = FA_ICON_PRESCRIPTION_BOTTLE
 
@@ -22,10 +22,10 @@
 	unitnum = client_source?.prefs.read_preference(/datum/preference/numeric/unitnum)
 	unitamt = client_source?.prefs.read_preference(/datum/preference/numeric/unitamt)
 	method_application = client_source?.prefs.read_preference(/datum/preference/choiced/method_application)
-	medical_record_text = "[human_holder.name] has been prescribed [unitamt] [LOWER_TEXT(method_application)] of [reagentname] with a dose of [unitnum] units per. Please produce this prescription and call them to medical when it is ready."
+	medical_record_text = "[human_holder.name] has been prescribed [unitamt] [LOWER_TEXT(method_application)] of [reagentname], with a dose of [unitnum] units per. Please produce this prescription and call them to medical when it is ready."
 
 	var/obj/item/storage/pill_bottle/pillbottle = new(get_turf(human_holder), reagentname)
-	give_item_to_holder(pillbottle, list(LOCATION_BACKPACK, LOCATION_HANDS), flavour_text = "[(human_holder.name)] has been prescribed [unitnum] [method_application] of [reagentname] with a dose of [unitnum] units per.")
+	give_item_to_holder(pillbottle, list(LOCATION_BACKPACK, LOCATION_HANDS), flavour_text = "You are prescribed [unitamt] [LOWER_TEXT(method_application)] of [reagentname], with a dose of [unitnum] units per.")
 
 /datum/quirk/item_quirk/prescription/remove()
 
