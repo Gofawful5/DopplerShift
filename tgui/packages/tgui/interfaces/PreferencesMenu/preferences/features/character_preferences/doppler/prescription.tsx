@@ -1,4 +1,9 @@
-import { Feature, FeatureNumberInput, FeatureChoiced, FeatureShortTextInput } from '../../base';
+import {
+  Feature,
+  FeatureChoiced,
+  FeatureNumberInput,
+  FeatureShortTextInput,
+} from '../../base';
 import { FeatureDropdownInput } from '../../dropdowns';
 
 export const prescription_reagent_name: Feature<string> = {
@@ -10,7 +15,6 @@ export const prescription_application_method: FeatureChoiced = {
   name: 'Method of Application',
   component: FeatureDropdownInput,
 };
-
 
 export const prescription_item_amount: Feature<number> = {
   name: 'Prescribed Amount',
