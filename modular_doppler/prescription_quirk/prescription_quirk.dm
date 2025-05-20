@@ -40,7 +40,7 @@
 		/datum/preference/choiced/prescription_application_method,
 	)
 
-//REAGENT NAME
+// REAGENT NAME
 
 /datum/preference/text/prescription_reagent_name
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
@@ -64,7 +64,7 @@
 /datum/preference/text/prescription_reagent_name/apply_to_human(mob/living/carbon/human/target, value)
 	return
 
-//NUMBER OF UNITS PER
+// NUMBER OF UNITS PER ITEM
 
 /datum/preference/numeric/prescription_reagent_amount
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
@@ -85,7 +85,7 @@
 /datum/preference/numeric/prescription_reagent_amount/apply_to_human(mob/living/carbon/human/target, value)
 	return
 
-//HOW MANY?
+// HOW MANY ITEMS?
 
 /datum/preference/numeric/prescription_item_amount
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
@@ -106,7 +106,7 @@
 /datum/preference/numeric/prescription_item_amount/apply_to_human(mob/living/carbon/human/target, value)
 	return
 
-//APPLICATION METHOD
+// APPLICATION METHOD
 
 /datum/preference/choiced/prescription_application_method
 	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
