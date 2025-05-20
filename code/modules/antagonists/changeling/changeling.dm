@@ -103,8 +103,22 @@
 	/// A list of all memories we've stolen through absorbs.
 	var/list/stolen_memories = list()
 
-	///	Keeps track of the currently selected profile.
-	var/datum/changeling_profile/current_profile
+	// DOPPLER EDIT ADDITION START
+	var/datum/changeling_profile/current_profile = null
+	var/list/mimicable_quirks_list = list(
+		"Excitable!",
+		"Heterochromatic",
+		"Oversized",
+		"Undersized",
+		"Social Anxiety",
+		"Soft-Spoken",
+		"Shifty Eyes",
+		"Smooth-Headed",
+		"Friendly",
+		"Bouncy",
+		"Settler",
+	)
+	// DOPPLER EDIT ADDITION END
 
 /datum/antagonist/changeling/New()
 	. = ..()
@@ -546,9 +560,14 @@
 	new_profile.socks = target.socks
 	// DOPPLER EDIT ADDITION START - Underwear and Bra split
 	new_profile.bra = target.bra
-	new_profile.undershirt_color = target.undershirt_color
-	new_profile.socks_color = target.socks_color
-	new_profile.bra_color = target.bra_color
+	new_profile.underwear_color = target.underwear_color
+	new_profile.eye_color_left = target.eye_color_left
+	new_profile.eye_color_right = target.eye_color_right
+	new_profile.grad_style = LAZYLISTDUPLICATE(target.grad_style)
+	new_profile.grad_color = LAZYLISTDUPLICATE(target.grad_color)
+	new_profile.mcolor = target.dna.features["mcolor"]
+	for(var/datum/quirk/target_quirk in target.quirks)
+		LAZYADD(new_profile.quirks, new target_quirk.type)
 	// DOPPLER EDIT ADDITION END
 
 	// Grab skillchips they have
@@ -745,7 +764,7 @@
 	var/mob/living/carbon/carbon_owner = owner.current
 	first_profile.dna.transfer_identity(carbon_owner, transfer_SE = TRUE)
 	carbon_owner.real_name = first_profile.name
-	carbon_owner.updateappearance(mutcolor_update = TRUE)
+	carbon_owner.updateappearance(mutcolor_update = TRUE, mutations_overlay_update = TRUE) //DOPPLER EDIT ADDITION
 	carbon_owner.domutcheck()
 
 /*
@@ -785,8 +804,30 @@
 	for(var/obj/item/bodypart/limb as anything in user.bodyparts)
 		limb.update_limb(is_creating = TRUE)
 
-	user.updateappearance(mutcolor_update = TRUE)
+	/// DOPPLER EDIT ADDITION START
+
+	user.bra = chosen_profile.bra
+	user.socks_color = chosen_profile.socks_color
+	user.grad_style = LAZYLISTDUPLICATE(chosen_profile.grad_style)
+	user.grad_color = LAZYLISTDUPLICATE(chosen_profile.grad_color)
+	for(var/datum/quirk/target_quirk in user.quirks)
+		for(var/mimicable_quirk in mimicable_quirks_list)
+			if(target_quirk.name == mimicable_quirk)
+				user.remove_quirk(target_quirk.type)
+				break
+
+	for(var/datum/quirk/target_quirk in chosen_profile.quirks)
+		for(var/mimicable_quirk in mimicable_quirks_list)
+			if(target_quirk.name == mimicable_quirk)
+				user.add_quirk(target_quirk.type)
+				break
+
+	for(var/obj/item/bodypart/limb as anything in user.bodyparts)
+		limb.update_limb(is_creating = TRUE)
+
+	user.updateappearance(mutcolor_update = TRUE, mutations_overlay_update = TRUE)
 	user.domutcheck()
+	/// DOPPLER EDIT ADDITION END
 
 	// Get rid of any scars from previous Changeling-ing
 	for(var/datum/scar/old_scar as anything in user.all_scars)
@@ -872,9 +913,13 @@
 		if(attempted_fake_scar)
 			attempted_fake_scar.fake = TRUE
 
+	/// DOPPLER EDIT ADDITION START
+	chosen_dna.transfer_identity(user, TRUE)
+	user.updateappearance(mutcolor_update = TRUE)
 	user.regenerate_icons()
 	user.name = user.get_visible_name()
 	current_profile = chosen_profile
+	/// DOPPLER EDIT ADDITION END
 
 // Changeling profile themselves. Store a data to store what every DNA instance looked like.
 /datum/changeling_profile
@@ -957,6 +1002,16 @@
 	new_profile.underwear_color = underwear_color
 	new_profile.undershirt = undershirt
 	new_profile.socks = socks
+	///DOPPLER EDIT ADDITION START
+	new_profile.socks_color = socks_color
+	new_profile.bra = bra
+	new_profile.bra_color = bra_color
+	new_profile.eye_color_left = eye_color_left
+	new_profile.eye_color_right = eye_color_right
+	new_profile.mcolor = mcolor
+	for(var/datum/quirk/target_quirk in quirks)
+		LAZYADD(new_profile.quirks, new target_quirk.type)
+	///DOPPLER EDIT ADDITION END
 	new_profile.worn_icon_list = worn_icon_list.Copy()
 	new_profile.worn_icon_state_list = worn_icon_state_list.Copy()
 	new_profile.skillchips = skillchips.Copy()

@@ -237,7 +237,36 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 	if(features["spines"])
 		L[DNA_SPINES_BLOCK] = construct_block(SSaccessories.spines_list.Find(features["spines"]), length(SSaccessories.spines_list))
 	if(features["ears"])
-		L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list.Find(features["ears"]), length(SSaccessories.ears_list))
+	/// DOPPLER SHIFT ADDITION BEGIN
+		if(SSaccessories.ears_list_lizard.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_lizard.Find(features["ears"]), length(SSaccessories.ears_list_lizard))
+		if(SSaccessories.ears_list_dog.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_dog.Find(features["ears"]), length(SSaccessories.ears_list_dog))
+		if(SSaccessories.ears_list_fox.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_fox.Find(features["ears"]), length(SSaccessories.ears_list_fox))
+		if(SSaccessories.ears_list_bunny.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_bunny.Find(features["ears"]), length(SSaccessories.ears_list_bunny))
+		if(SSaccessories.ears_list_mouse.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_mouse.Find(features["ears"]), length(SSaccessories.ears_list_mouse))
+		if(SSaccessories.ears_list_bird.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_bird.Find(features["ears"]), length(SSaccessories.ears_list_bird))
+		if(SSaccessories.ears_list_monkey.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_monkey.Find(features["ears"]), length(SSaccessories.ears_list_monkey))
+		if(SSaccessories.ears_list_deer.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_deer.Find(features["ears"]), length(SSaccessories.ears_list_deer))
+		if(SSaccessories.ears_list_fish.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_fish.Find(features["ears"]), length(SSaccessories.ears_list_fish))
+		if(SSaccessories.ears_list_bug.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_bug.Find(features["ears"]), length(SSaccessories.ears_list_bug))
+		if(SSaccessories.ears_list_humanoid.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_humanoid.Find(features["ears"]), length(SSaccessories.ears_list_humanoid))
+		if(SSaccessories.ears_list_synthetic.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_synthetic.Find(features["ears"]), length(SSaccessories.ears_list_synthetic))
+		if(SSaccessories.ears_list_alien.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list_alien.Find(features["ears"]), length(SSaccessories.ears_list_alien))
+		if(SSaccessories.ears_list.Find(features["ears"]))
+			L[DNA_EARS_BLOCK] = construct_block(SSaccessories.ears_list.Find(features["ears"]), length(SSaccessories.ears_list))
+	/// DOPPLER SHIFT ADDITION END
 	if(features["moth_wings"] != "Burnt Off")
 		L[DNA_MOTH_WINGS_BLOCK] = construct_block(SSaccessories.moth_wings_list.Find(features["moth_wings"]), length(SSaccessories.moth_wings_list))
 	if(features["moth_antennae"] != "Burnt Off")
@@ -253,6 +282,8 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 	/// DOPPLER SHIFT ADDITION BEGIN
 	if(features["breasts"])
 		L[DNA_BREASTS_BLOCK] = construct_block(SSaccessories.breasts_list.Find(features["breasts"]), length(SSaccessories.breasts_list))
+	if(features["wings"])
+		L[DNA_BREASTS_BLOCK] = construct_block(SSaccessories.breasts_list.Find(features["wings"]), length(SSaccessories.wings_list_more))
 	/// DOPPLER SHIFT ADDITION END
 
 	for(var/blocknum in 1 to DNA_FEATURE_BLOCKS)
@@ -387,7 +418,36 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 		if(DNA_SPINES_BLOCK)
 			set_uni_feature_block(blocknumber, construct_block(SSaccessories.spines_list.Find(features["spines"]), length(SSaccessories.spines_list)))
 		if(DNA_EARS_BLOCK)
-			set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list.Find(features["ears"]), length(SSaccessories.ears_list)))
+		/// DOPPLER SHIFT ADDITION BEGIN
+			if(SSaccessories.ears_list_lizard.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_lizard.Find(features["ears"]), length(SSaccessories.ears_list_lizard)))
+			if(SSaccessories.ears_list_dog.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_dog.Find(features["ears"]), length(SSaccessories.ears_list_dog)))
+			if(SSaccessories.ears_list_fox.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_fox.Find(features["ears"]), length(SSaccessories.ears_list_fox)))
+			if(SSaccessories.ears_list_bunny.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_bunny.Find(features["ears"]), length(SSaccessories.ears_list_bunny)))
+			if(SSaccessories.ears_list_mouse.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_mouse.Find(features["ears"]), length(SSaccessories.ears_list_mouse)))
+			if(SSaccessories.ears_list_bird.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_bird.Find(features["ears"]), length(SSaccessories.ears_list_bird)))
+			if(SSaccessories.ears_list_monkey.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_monkey.Find(features["ears"]), length(SSaccessories.ears_list_monkey)))
+			if(SSaccessories.ears_list_deer.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_deer.Find(features["ears"]), length(SSaccessories.ears_list_deer)))
+			if(SSaccessories.ears_list_fish.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_fish.Find(features["ears"]), length(SSaccessories.ears_list_fish)))
+			if(SSaccessories.ears_list_bug.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_bug.Find(features["ears"]), length(SSaccessories.ears_list_bug)))
+			if(SSaccessories.ears_list_humanoid.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_humanoid.Find(features["ears"]), length(SSaccessories.ears_list_humanoid)))
+			if(SSaccessories.ears_list_synthetic.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_synthetic.Find(features["ears"]), length(SSaccessories.ears_list_synthetic)))
+			if(SSaccessories.ears_list_alien.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list_alien.Find(features["ears"]), length(SSaccessories.ears_list_alien)))
+			if(SSaccessories.ears_list.Find(features["ears"]))
+				set_uni_feature_block(blocknumber, construct_block(SSaccessories.ears_list.Find(features["ears"]), length(SSaccessories.ears_list)))
+		/// DOPPLER SHIFT ADDITION END
 		if(DNA_MOTH_WINGS_BLOCK)
 			set_uni_feature_block(blocknumber, construct_block(SSaccessories.moth_wings_list.Find(features["moth_wings"]), length(SSaccessories.moth_wings_list)))
 		if(DNA_MOTH_ANTENNAE_BLOCK)
@@ -689,7 +749,36 @@ GLOBAL_LIST_INIT(total_uf_len_by_block, populate_total_uf_len_by_block())
 	if(dna.features["tail_lizard"])
 		dna.features["tail_lizard"] = SSaccessories.tails_list_lizard[deconstruct_block(get_uni_feature_block(features, DNA_LIZARD_TAIL_BLOCK), length(SSaccessories.tails_list_lizard))]
 	if(dna.features["ears"])
-		dna.features["ears"] = SSaccessories.ears_list[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list))]
+	/// DOPPLER SHIFT ADDITION BEGIN
+		if(SSaccessories.ears_list_lizard.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_lizard[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_lizard))]
+		if(SSaccessories.ears_list_dog.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_dog[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_dog))]
+		if(SSaccessories.ears_list_fox.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_fox[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_fox))]
+		if(SSaccessories.ears_list_bunny.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_bunny[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_bunny))]
+		if(SSaccessories.ears_list_mouse.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_mouse[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_mouse))]
+		if(SSaccessories.ears_list_bird.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_bird[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_bird))]
+		if(SSaccessories.ears_list_monkey.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_monkey[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_monkey))]
+		if(SSaccessories.ears_list_deer.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_deer[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_deer))]
+		if(SSaccessories.ears_list_fish.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_fish[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_fish))]
+		if(SSaccessories.ears_list_bug.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_bug[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_bug))]
+		if(SSaccessories.ears_list_humanoid.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_humanoid[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_humanoid))]
+		if(SSaccessories.ears_list_synthetic.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_synthetic[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_synthetic))]
+		if(SSaccessories.ears_list_alien.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list_alien[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list_alien))]
+		if(SSaccessories.ears_list.Find(features["ears"]))
+			dna.features["ears"] = SSaccessories.ears_list[deconstruct_block(get_uni_feature_block(features, DNA_EARS_BLOCK), length(SSaccessories.ears_list))]
+	/// DOPPLER SHIFT ADDITION END
 	if(dna.features["moth_wings"])
 		var/genetic_value = SSaccessories.moth_wings_list[deconstruct_block(get_uni_feature_block(features, DNA_MOTH_WINGS_BLOCK), length(SSaccessories.moth_wings_list))]
 		dna.features["original_moth_wings"] = genetic_value
