@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import {
   BlockQuote,
   Box,
@@ -7,7 +7,7 @@ import {
   Section,
   TextArea,
 } from 'tgui-core/components';
-import type { BooleanLike } from 'tgui-core/react';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -42,7 +42,7 @@ const linkDecomposeRegex = /\[([^[]+)\]\(([^)]+)\)/;
 
 // Renders any markdown-style links within a provided body of text
 const linkifyText = (text: string) => {
-  const parts: ReactNode[] = text.split(linkRegex);
+  let parts: ReactNode[] = text.split(linkRegex);
   for (let i = 1; i < parts.length; i += 2) {
     const match = linkDecomposeRegex.exec(parts[i] as string);
     if (!match) continue;

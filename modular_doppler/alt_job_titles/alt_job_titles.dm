@@ -20,7 +20,8 @@
 	alt_titles = list(
 		"Assistant",
 		"Artist",
-		"Businessperson",
+		"Businessman",
+		"Businesswoman",
 		"Civilian",
 		"Entertainer",
 		"Freelancer",
@@ -30,8 +31,6 @@
 		"Off-Duty Staff",
 		"Colonist",
 		"Contractor",
-		"Visitor",
-		"Guest",
 	)
 
 /datum/job/atmospheric_technician
@@ -40,6 +39,16 @@
 		"Emergency Fire Technician",
 		"Firefighter",
 		"Life Support Technician",
+	)
+
+/datum/job/barber
+	alt_titles = list(
+		"Barber",
+		"Aethestician",
+		"Colorist",
+		"Salon Manager",
+		"Salon Technician",
+		"Stylist",
 	)
 
 /datum/job/bartender
@@ -72,15 +81,12 @@
 		"Command Secretary",
 		"Bridge Intern",
 		"Command Intern",
-		"Command Advisor",
 	)
 
 /datum/job/command_bodyguard
 	alt_titles = list(
 		"Command Bodyguard",
 		"Secreterial Officer",
-		"Command Guardian",
-		"Command Protector",
 	)
 
 /datum/job/botanist
@@ -95,14 +101,26 @@
 		"Junior Botanist",
 	)
 
+/datum/job/bouncer
+	alt_titles = list(
+		"Bouncer",
+		"Service Guard",
+		"Doorman",
+	)
+
+/datum/job/corrections_officer
+	alt_titles = list(
+		"Corrections Officer",
+		"Brig Officer",
+		"Prison Guard",
+	)
+
 /datum/job/captain
 	alt_titles = list(
 		"Captain",
 		"Commanding Officer",
 		"Site Manager",
 		"Station Commander",
-		"Shipmaster",
-		"Shipmistress",
 	)
 
 /datum/job/cargo_technician
@@ -112,9 +130,7 @@
 		"Commodities Trader",
 		"Deck Worker",
 		"Inventory Associate",
-		"Mailperson",
-		"Postperson",
-		"Courier",
+		"Mailman",
 		"Mail Carrier",
 		"Receiving Clerk",
 		"Union Associate",
@@ -151,7 +167,7 @@
 /datum/job/chief_engineer
 	alt_titles = list(
 		"Chief Engineer",
-		"Engineering Foreperson",
+		"Engineering Foreman",
 		"Head of Engineering",
 	)
 
@@ -211,7 +227,6 @@
 		"Cyborg",
 		"Android",
 		"Robot",
-		"Telepuppet",
 	)
 
 /datum/job/detective
@@ -219,6 +234,7 @@
 		"Detective",
 		"Forensic Scientist",
 		"Forensic Technician",
+		"Private Investigator",
 	)
 
 /datum/job/doctor
@@ -231,6 +247,8 @@
 		"Surgeon",
 		"Medical Student",
 	)
+
+/datum/job/engineering_guard //see orderly
 
 /datum/job/geneticist
 	alt_titles = list(
@@ -285,6 +303,19 @@
 		"Mummer",
 		"Pantomimist",
 	)
+
+/datum/job/nanotrasen_consultant
+	alt_titles = list(
+		"Nanotrasen Consultant",
+		"Nanotrasen Advisor",
+		"Nanotrasen Diplomat",
+	)
+
+/datum/job/orderly
+	alt_titles = list(
+		"Orderly",
+		"Medical Guard",
+	) //other dept guards' alt-titles should be kept to [department] guard to avoid confusion, unless the department gets a re-do.
 
 /datum/job/paramedic
 	alt_titles = list(
@@ -342,6 +373,8 @@
 		"Apprentice Roboticist",
 	)
 
+/datum/job/science_guard //See orderly
+
 /datum/job/scientist
 	alt_titles = list(
 		"Scientist",
@@ -357,7 +390,6 @@
 		"Xenoarchaeologist",
 		"Xenobiologist",
 		"Research Assistant",
-		"Geologist",
 	)
 
 /datum/job/security_officer
@@ -399,6 +431,14 @@
 		"Tram Technician",
 	)
 
+/datum/job/virologist
+	alt_titles = list(
+		"Virologist",
+		"Epidemiologist",
+		"Pathologist",
+		"Junior Pathologist",
+	)
+
 /datum/job/warden
 	alt_titles = list(
 		"Warden",
@@ -406,5 +446,4 @@
 		"Brig Governor",
 		"Dispatch Officer",
 		"Jailer",
-		"Lieutenant",
 	)

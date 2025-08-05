@@ -4,7 +4,7 @@
 	show_in_roundend = TRUE
 	show_in_antagpanel = TRUE
 	show_name_in_check_antagonists = TRUE
-	antag_flags = ANTAG_SKIP_GLOBAL_LIST
+	count_against_dynamic_roll_chance = FALSE
 	show_to_ghosts = TRUE
 	/// The antagonist's master, used for objective
 	var/mob/living/monky_master

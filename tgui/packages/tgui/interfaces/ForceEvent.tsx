@@ -1,4 +1,4 @@
-import { chunk } from 'es-toolkit';
+import { paginate } from 'common/collections';
 import { createContext, useContext, useState } from 'react';
 import {
   Button,
@@ -8,7 +8,7 @@ import {
   Stack,
   Tabs,
 } from 'tgui-core/components';
-import type { BooleanLike } from 'tgui-core/react';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';
@@ -215,7 +215,7 @@ function EventTabs(props) {
   const { categoryState } = useForceEventContext();
   const [category, setCategory] = categoryState;
 
-  const layerCats = chunk(categories, CATEGORY_PAGE_ITEMS);
+  const layerCats = paginate(categories, CATEGORY_PAGE_ITEMS);
 
   return (
     <Section mb="-6px">

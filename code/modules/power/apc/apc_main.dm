@@ -140,8 +140,6 @@
 	var/no_charge = FALSE
 	/// Used for apc helper called full_charge to make apc's charge at 100% meter.
 	var/full_charge = FALSE
-	///When did the apc generate last malf ai processing time.
-	COOLDOWN_DECLARE(malf_ai_pt_generation)
 	armor_type = /datum/armor/power_apc
 
 /datum/armor/power_apc
@@ -265,6 +263,8 @@
 
 /obj/machinery/power/apc/Destroy()
 	if(malfai)
+		if(operating)
+			malfai.malf_picker.processing_time = clamp(malfai.malf_picker.processing_time - 10, 0, 1000)
 		malfai.hacked_apcs -= src
 		malfai = null
 	disconnect_from_area()
@@ -361,6 +361,8 @@
 /obj/machinery/power/apc/atom_break(damage_flag)
 	. = ..()
 	if(.)
+		if(malfai && operating)
+			malfai.malf_picker.processing_time = clamp(malfai.malf_picker.processing_time - 10, 0, 1000)
 		operating = FALSE
 		if(occupier)
 			malfvacate(TRUE)
@@ -594,11 +596,6 @@
 		hacked_flicker_counter = hacked_flicker_counter - 1
 		if(hacked_flicker_counter <= 0)
 			flicker_hacked_icon()
-		if(COOLDOWN_FINISHED(src, malf_ai_pt_generation) && cell.use(30 KILO JOULES)>0) // Over time generation of malf points for the ai controlling it, costs a bit of power
-			COOLDOWN_START(src, malf_ai_pt_generation, 30 SECONDS)
-			malfai.malf_picker.processing_time += 1
-
-
 
 	//dont use any power from that channel if we shut that power channel off
 	if(operating)

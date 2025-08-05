@@ -5,7 +5,7 @@
 	antag_moodlet = /datum/mood_event/cult
 	suicide_cry = "FOR NAR'SIE!!"
 	preview_outfit = /datum/outfit/cultist
-	pref_flag = ROLE_CULTIST
+	job_rank = ROLE_CULTIST
 	antag_hud_name = "cult"
 	stinger_sound = 'sound/music/antag/bloodcult/bloodcult_gain.ogg'
 
@@ -275,3 +275,4 @@
 ///Used to check if the owner is counted as a secondary invoker for runes.
 /datum/antagonist/cult/proc/check_invoke_validity()
 	return TRUE
+

@@ -6,9 +6,10 @@
 	show_in_antagpanel = FALSE
 	show_to_ghosts = TRUE
 	antagpanel_category = ANTAG_GROUP_HUNTERS
+	prevent_roundtype_conversion = FALSE
 	antag_hud_name = "fugitive_hunter"
 	suicide_cry = "FOR GLORY!!"
-	antag_flags = ANTAG_SKIP_GLOBAL_LIST
+	count_against_dynamic_roll_chance = FALSE
 	var/datum/team/fugitive_hunters/hunter_team
 	var/backstory = "error"
 

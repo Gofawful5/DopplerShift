@@ -272,7 +272,7 @@ GLOBAL_LIST_EMPTY(heretic_arenas)
 	replace_banned = FALSE
 	objectives = list()
 	antag_hud_name = "brainwashed"
-	antag_flags = ANTAG_FAKE
+	block_midrounds = FALSE
 
 /datum/antagonist/heretic_arena_participant/on_gain()
 	forge_objectives()

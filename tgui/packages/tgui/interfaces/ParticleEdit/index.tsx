@@ -1,15 +1,10 @@
 /* eslint-disable react/jsx-no-undef */
-import {
-  createContext,
-  type Dispatch,
-  type SetStateAction,
-  useState,
-} from 'react';
+import { createContext, Dispatch, SetStateAction, useState } from 'react';
 import { Button, LabeledList, Section } from 'tgui-core/components';
 
 import { useBackend } from '../../backend';
 import { Window } from '../../layouts';
-import type { ParticleUIData } from './data';
+import { ParticleUIData } from './data';
 import {
   EntryCoord,
   EntryFloat,

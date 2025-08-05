@@ -1,7 +1,7 @@
 import {
   createContext,
   Fragment,
-  type SetStateAction,
+  SetStateAction,
   useContext,
   useState,
 } from 'react';

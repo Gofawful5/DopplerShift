@@ -41,15 +41,12 @@
 	AddElement(/datum/element/ridable, /datum/component/riding/vehicle/wheelchair/motorized)
 
 /obj/vehicle/ridden/wheelchair/motorized/on_craft_completion(list/components, datum/crafting_recipe/current_recipe, atom/crafter)
-	. = ..()
-
 	// This wheelchair was crafted, so clean out default parts
-	QDEL_NULL(power_cell)
-
+	qdel(power_cell)
 	component_parts = list()
+
 	for(var/obj/item/stock_parts/part in contents)
-		// power cell, physically moves into the wheelchair
-		if(istype(part, /obj/item/stock_parts/power_store/cell))
+		if(istype(part, /obj/item/stock_parts/power_store/cell)) // power cell, physically moves into the wheelchair
 			power_cell = part
 			continue
 
@@ -58,8 +55,9 @@
 		if(isnull(newstockpart))
 			CRASH("No corresponding datum/stock_part for [part.type]")
 		component_parts += newstockpart
-		qdel(part)
 	refresh_parts()
+
+	return ..()
 
 /obj/vehicle/ridden/wheelchair/motorized/proc/refresh_parts()
 	speed = 1 // Should never be under 1
@@ -165,7 +163,7 @@
 		return
 	. += "Speed: [speed]"
 	. += "Energy efficiency: [power_efficiency]"
-	. += "Power: [display_energy(power_cell.charge)] out of [display_energy(power_cell.maxcharge)]"
+	. += "Power: [power_cell.charge] out of [power_cell.maxcharge]"
 
 /obj/vehicle/ridden/wheelchair/motorized/Move(newloc, direct)
 	. = ..()

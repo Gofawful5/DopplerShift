@@ -1,6 +1,6 @@
-import type { BooleanLike } from 'tgui-core/react';
+import { BooleanLike } from 'tgui-core/react';
 
-import type { Position } from '../common/Connections';
+import { Position } from '../common/Connections';
 
 export type PlaneDebugData = {
   mob_name: string;

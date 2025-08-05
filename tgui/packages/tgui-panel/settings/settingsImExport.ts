@@ -18,7 +18,8 @@ export function exportChatSettings(
     ],
   };
 
-  const pagesEntry = { chatPages: pages };
+  const pagesEntry: Record<string, Page>[] = [];
+  pagesEntry['chatPages'] = pages;
 
   const exportObject = Object.assign(settings, pagesEntry);
 
@@ -47,8 +48,8 @@ export function importChatSettings(settings: string | string[]) {
   if (!ourImport?.version) {
     return;
   }
-  const pageRecord = ourImport.chatPages;
-  delete ourImport.chatPages;
+  const pageRecord = ourImport['chatPages'];
+  delete ourImport['chatPages'];
 
   dispatch(importSettings(ourImport, pageRecord));
 }

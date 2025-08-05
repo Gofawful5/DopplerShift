@@ -98,8 +98,8 @@ export const PetBuilder = (props) => {
   const [selectedGender, setSelectedGender] = useState(pet_gender);
 
   const ScrollPetSpecies = (direction: string) => {
-    const dir = direction === 'next' ? 1 : -1;
-    const currindex = pet_types.indexOf(selectedSpecie);
+    let dir = direction === 'next' ? 1 : -1;
+    let currindex = pet_types.indexOf(selectedSpecie);
     const newSpecie =
       pet_types[(currindex + dir + pet_types.length) % pet_types.length];
 
@@ -113,8 +113,8 @@ export const PetBuilder = (props) => {
     if (!selectedPet) {
       return;
     }
-    const dir = direction === 'next' ? 1 : -1;
-    const currindex = filteredPetList.indexOf(selectedPet);
+    let dir = direction === 'next' ? 1 : -1;
+    let currindex = filteredPetList.indexOf(selectedPet);
     setSelectedPet(
       filteredPetList[
         (currindex + dir + filteredPetList.length) % filteredPetList.length

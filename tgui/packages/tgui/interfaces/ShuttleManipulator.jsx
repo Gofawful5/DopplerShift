@@ -1,4 +1,4 @@
-import { map } from 'es-toolkit/compat';
+import { map } from 'common/collections';
 import { useState } from 'react';
 import {
   Button,

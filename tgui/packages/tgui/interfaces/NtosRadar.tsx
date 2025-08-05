@@ -6,7 +6,7 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
-import { type BooleanLike, classes } from 'tgui-core/react';
+import { BooleanLike, classes } from 'tgui-core/react';
 
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';

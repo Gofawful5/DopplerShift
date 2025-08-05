@@ -2,7 +2,7 @@ import { Box, Button } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
 import { useBackend } from '../../backend';
-import type { DataCase } from './DataTypes';
+import { DataCase } from './DataTypes';
 
 type BoardTabsData = {
   cases: DataCase[];

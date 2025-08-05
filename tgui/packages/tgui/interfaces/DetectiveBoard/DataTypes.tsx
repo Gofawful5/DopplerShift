@@ -1,4 +1,4 @@
-import type { Connection } from '../common/Connections';
+import { Connection } from '../common/Connections';
 
 export type DataCase = {
   ref: string;

@@ -59,7 +59,7 @@ SUBSYSTEM_DEF(title)
 		if(!thing)
 			continue
 		var/atom/movable/screen/splash/S = new(null, null, thing, FALSE)
-		S.fade(FALSE,FALSE)
+		S.Fade(FALSE,FALSE)
 
 /datum/controller/subsystem/title/Recover()
 	icon = SStitle.icon

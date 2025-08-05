@@ -1,6 +1,5 @@
+import { map, sortBy } from 'common/collections';
 import { vecLength, vecSubtract } from 'common/vector';
-import { sortBy } from 'es-toolkit';
-import { map } from 'es-toolkit/compat';
 import {
   Box,
   Button,
@@ -38,12 +37,13 @@ export const Gps = (props) => {
         return { ...signal, dist, index };
       }),
     (signals) =>
-      sortBy(signals, [
+      sortBy(
+        signals,
         // Signals with distance metric go first
         (signal) => signal.dist === undefined,
         // Sort alphabetically
         (signal) => signal.entrytag,
-      ]),
+      ),
   ])(data.signals || []);
   return (
     <Window title="Global Positioning System" width={470} height={700}>

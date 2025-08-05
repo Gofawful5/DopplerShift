@@ -1,4 +1,4 @@
-import { sortBy } from 'es-toolkit';
+import { sortBy } from 'common/collections';
 import { Button, Section, Stack } from 'tgui-core/components';
 
 import { useBackend } from '../backend';
@@ -29,9 +29,10 @@ export const StationAlertConsoleContent = (props) => {
     Camera: 5,
   };
 
-  const sortedAlarms = sortBy(data.alarms || [], [
+  const sortedAlarms = sortBy(
+    data.alarms || [],
     (alarm) => sortingKey[alarm.name],
-  ]);
+  );
 
   return (
     <>

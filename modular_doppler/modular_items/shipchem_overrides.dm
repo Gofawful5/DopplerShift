@@ -185,6 +185,3 @@
 	cap_on = TRUE
 	can_have_cap = TRUE
 	cap_icon_state = "test_tube_cap"
-
-/obj/item/reagent_containers/cup/beaker/organ_jar
-	icon = 'icons/obj/medical/chemical.dmi'

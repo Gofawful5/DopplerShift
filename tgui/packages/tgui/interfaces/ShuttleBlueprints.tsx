@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import {
   Box,
   Button,
@@ -9,7 +9,7 @@ import {
   Stack,
   Tooltip,
 } from 'tgui-core/components';
-import type { BooleanLike } from 'tgui-core/react';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Direction } from '../constants';

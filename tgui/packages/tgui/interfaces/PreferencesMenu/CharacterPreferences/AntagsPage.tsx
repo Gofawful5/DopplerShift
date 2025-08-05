@@ -12,8 +12,8 @@ import {
 } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
-import { type Antagonist, Category } from '../antagonists/base';
-import type { PreferencesMenuData } from '../types';
+import { Antagonist, Category } from '../antagonists/base';
+import { PreferencesMenuData } from '../types';
 
 const requireAntag = require.context(
   '../antagonists/antagonists',

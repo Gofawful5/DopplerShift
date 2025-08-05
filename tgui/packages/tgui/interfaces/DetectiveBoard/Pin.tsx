@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Box, Stack } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 
-import type { DataEvidence } from './DataTypes';
+import { DataEvidence } from './DataTypes';
 
 type PinProps = {
   evidence: DataEvidence;

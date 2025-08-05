@@ -10,9 +10,9 @@ import {
   Section,
   Tooltip,
 } from 'tgui-core/components';
-import type { BooleanLike } from 'tgui-core/react';
+import { BooleanLike } from 'tgui-core/react';
 
-import type { HypertorusFilter } from '.';
+import { HypertorusFilter } from '.';
 import { HelpDummy, HoverHelp } from './helpers';
 
 type ComboProps = {

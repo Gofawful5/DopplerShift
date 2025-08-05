@@ -6,7 +6,7 @@ import {
   Section,
 } from 'tgui-core/components';
 import { formatMoney } from 'tgui-core/format';
-import type { BooleanLike } from 'tgui-core/react';
+import { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
 import { Window } from '../layouts';

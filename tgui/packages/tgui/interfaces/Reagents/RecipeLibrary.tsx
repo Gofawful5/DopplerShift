@@ -9,7 +9,7 @@ import {
 
 import { useBackend } from '../../backend';
 import { bookmarkedReactions } from '.';
-import type { ReagentsData, ReagentsProps } from './types';
+import { ReagentsData, ReagentsProps } from './types';
 
 function matchBitflag(a: number, b: number) {
   return a & b && (a | b) === b;
@@ -35,7 +35,7 @@ export function RecipeLibrary(props: ReagentsProps) {
     if (!reagentFilter || currentReagents === null) {
       return true;
     }
-    const matches = reaction.reactants.filter((reactant) =>
+    let matches = reaction.reactants.filter((reactant) =>
       currentReagents.includes(reactant.id),
     ).length;
     return matches === currentReagents.length;
